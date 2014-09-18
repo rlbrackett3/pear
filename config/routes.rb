@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#home'
-  get '/home' => 'home#home', as: :home
+  get '/home' => 'home#home', as: :home # This is redundent due to the 'root' definition above, you can call this with root_path, wont hurt anything, just extra stuff
   get '/about' => 'home#about', as: :about
-  get '/projects' => 'projects#projects', as: :projects
-  get '/webdesign' => 'projects#webdesign', as: :webdesign
+  get '/projects' => 'projects#projects', as: :projects # for RESTful routing you would use 'index' as the controller action
+  get '/webdesign' => 'projects#webdesign', as: :webdesign # we will look at how this could be handled with categories and relationships
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
